@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  #配置springData jap
+  jpa:
+    #指定是否在spring容器启动时创建表 默认是false
+    generate-ddl: true
+    #在控制台是否显示sql语句
+    show-sql: true
+    #指定应用重启后不重新更新表内容
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://119.29.117.244:3306/cloudTest?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: fuck123
+
+logging:
+  pattern:
+    console: level-%level %msg%n
+
+  level:
+    root: info
+    org.hibernate: info
+    #在 showsql 为true的前提下显示sql中的动态插入值
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    #在 showsql 为true的前提下显示查询结果
+    org.hibernate.hql.internal.ast.exec.BasicExecutor: trace
+    com.couldstart: debug
