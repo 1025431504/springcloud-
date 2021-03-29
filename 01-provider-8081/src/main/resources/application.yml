@@ -20,9 +20,6 @@ spring:
     password: fuck123
 
 logging:
-  pattern:
-    console: level-%level %msg%n
-
   level:
     root: info
     org.hibernate: info
