@@ -1,0 +1,6 @@
+com\couldstart\service\DepartService.class
+com\couldstart\service\impl\DepartServiceImpl.class
+com\couldstart\Application.class
+com\couldstart\controller\DepartController.class
+com\couldstart\repository\DepartRepository.class
+com\couldstart\bean\Depart.class
