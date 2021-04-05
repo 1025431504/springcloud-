@@ -40,7 +40,10 @@ eureka:
       defaultZone: http://localhost:8000/eureka
   instance:
     instance-id: cloudstart-provider-8081
-
+    #设置当前client每1秒向server发送一次心跳,单位是秒
+    lease-renewal-interval-in-seconds: 1
+    #指定让server认定当前client已经失效，将来可以从注册表中剔除了,单位是秒
+    lease-expiration-duration-in-seconds: 3
 
 info:
   auth: Reythor
@@ -62,3 +65,15 @@ info:
 #      kkb2: http://localhost:8000/eureka
 #      # 指定要连接的注册中心所在的区域
 #    fetch-remote-regions-registry: xxx
+
+#基于Actuator 实现服务下架
+management:
+  #开启所有监控
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #开启shutdown监控终端
+  endpoint:
+    shutdown:
+      enabled: true
