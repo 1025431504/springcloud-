@@ -33,13 +33,13 @@ logging:
     org.hibernate.hql.internal.ast.exec.BasicExecutor: trace
     com.couldstart: debug
 
-#eureka:
-#  client:
-#    service-url:
-#      #指定当前client所要连接的服务地址
-#      defaultZone: http://localhost:8000/eureka
-#  instance:
-#    instance-id: cloudstart-provider-8081
+eureka:
+  client:
+    service-url:
+      #指定当前client所要连接的服务地址
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    instance-id: cloudstart-provider-8081
 
 
 info:
@@ -47,16 +47,18 @@ info:
   app.name: abcmsc
   company.name: www.kaikeba.com
 
-eureka:
-  client:
-    # 指定区域名称
-    region: xxx
-    # 指定区域中所包含的地带zone
-    availability-zones:
-      xxx: kkb1,kkb2
-    #指定各个地带zone中所包含的eureka server地址
-    service-url:
-      kkb1: http://localhost:8000/eureka
-      kkb2: http://localhost:8000/eureka
-      # 指定要连接的注册中心所在的区域
-    fetch-remote-regions-registry: xxx
+#region与zone的关系是1:n的关系
+#zone与eureka的关系是1:n的
+#eureka:
+#  client:
+#    # 指定区域名称
+#    region: xxx
+#    # 指定区域中所包含的地带zone
+#    availability-zones:
+#      xxx: kkb1,kkb2
+#    #指定各个地带zone中所包含的eureka server地址
+#    service-url:
+#      kkb1: http://localhost:8000/eureka
+#      kkb2: http://localhost:8000/eureka
+#      # 指定要连接的注册中心所在的区域
+#    fetch-remote-regions-registry: xxx
