@@ -10,3 +10,8 @@ eureka:
     service-url:
       #当前eureka server对外暴露的服务地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    #关闭自我保护机制
+    enable-self-preservation: false
+  #指定自我保护机制的开启阈值
+    #renewal-percent-threshold: 0.75
